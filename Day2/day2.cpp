@@ -26,27 +26,31 @@ int main(int argc, char *argv[]) {
         else if(mystring[0] == 'C')
             opponent = "scissors";
         if(mystring[2] == 'X') {
-            you = "rock";
-            total += 1;
+            if(opponent == "rock")
+                total += 3;
+            if(opponent == "paper")
+                total += 1;
+            if(opponent == "scissors")
+                total += 2;
         }
         else if(mystring[2] == 'Y'){
-            you = "paper";
-            total += 2;
-        }
-        else if(mystring[2] == 'Z'){
-            you = "scissors";
+            if(opponent == "rock")
+                total += 1;
+            if(opponent == "paper")
+                total += 2;
+            if(opponent == "scissors")
+                total += 3;
             total += 3;
         }
-        if(you == opponent)
-            total+= 3;
-        
-        if(opponent == "scissors" && you == "rock") 
+        else if(mystring[2] == 'Z'){
+            if(opponent == "rock")
+                total += 2;
+            if(opponent == "paper")
+                total += 3;
+            if(opponent == "scissors")
+                total += 1;
             total += 6;
-        if(opponent == "rock" && you == "paper") 
-            total += 6;
-        if(opponent == "paper" && you == "scissors") 
-            total += 6;
-        
+        }
         //cout << stoi(mystring) <<endl;
     }
 
